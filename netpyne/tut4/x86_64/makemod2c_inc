@@ -1,0 +1,8 @@
+./izhi2007b.c: ../izhi2007b.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "izhi2007b.mod" -o "/home/brian/Desktop/BCS_summer/netpyne/tut4/x86_64")
+
+./izhi2007b.o: ./izhi2007b.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
