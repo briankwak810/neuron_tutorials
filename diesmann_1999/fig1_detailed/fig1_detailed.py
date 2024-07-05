@@ -62,7 +62,7 @@ simConfig.dt = 0.05                  # Internal integration timestep to use
 simConfig.verbose = False            # Show detailed messages
 simConfig.recordTraces = {'V_soma':{'sec':'soma','loc':0.5,'var':'v'}}  # Dict with traces to record
 simConfig.recordStep = 1             # Step size in ms to save data (e.g. V traces, LFP, etc)
-simConfig.filename = 'fig1'          # Set file output name
+simConfig.filename = 'fig1_detailed'          # Set file output name
 simConfig.savePickle = False         # Save params, network and sim output to pickle file
 
 simConfig.analysis['plotRaster'] = {'orderBy': 'y', 'orderInverse': True, 'saveFig': True}         # Plot a raster
