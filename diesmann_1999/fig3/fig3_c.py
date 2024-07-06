@@ -215,9 +215,9 @@ for num_signal in range(10, 100, 30):
                                  shrinkB=0),
                     )
 
-num_signal = 35
+num_signal = 34
 var_signal = 5
-seed = 57
+seed = 20
 spkvar, spka = run_single_packet_w(num_signal, var_signal, seed)
 a_in = np.concatenate(([var_signal], spkvar[:]))
 a_out = np.concatenate(([num_signal], spka[:]))
@@ -250,8 +250,15 @@ for i in range(len(a_in) - 1):
 # Add y=x line
 # plt.plot([0, 100], [0, 100], 'k--', alpha=0.7)
 
+# Define the points for the curved line
+x = np.array([0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5])
+y = np.array([21, 21, 22, 24, 26, 28, 30, 37, 42, 55, 60])
+
+# Plot the dotted line
+plt.plot(x, y, color='gray', linestyle=':', linewidth=2)
+
 # Set labels and title
-plt.xlabel('$sigma_{out}$ (spikes)', fontsize=12)
+plt.xlabel('$sigma_{out}$ (ms)', fontsize=12)
 plt.ylabel('$a_{out}$ (spikes)', fontsize=12)
 plt.title('Spike Propagation', fontsize=14)
 
