@@ -1,0 +1,8 @@
+./inoise.c: ../inoise.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "inoise.mod" -o "/home/brian/Desktop/BCS_summer/neuron_tutorials/diesmann_1999/fig3/x86_64")
+
+./inoise.o: ./inoise.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+

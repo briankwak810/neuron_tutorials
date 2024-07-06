@@ -37,7 +37,7 @@ def run_single_packet(a_in, s_in):
         netParams.stimSourceParams[f'IClamp_{i}'] = {
             'type': 'IClamp',
             'del': spike_time,  # delay before onset of current
-            'dur': 0.1,  # duration of current injection (short to mimic a spike)
+            'dur': 1,  # duration of current injection (short to mimic a spike)
             'amp': 0.4  # amplitude of current injection
         }
         
